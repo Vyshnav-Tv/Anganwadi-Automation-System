@@ -1,0 +1,264 @@
+{% load static %}
+
+<html lang="en">
+  <head>
+    <style>
+      .te
+        {
+        
+            color: black;
+            text-align: center;
+            width: 100%;
+            height: 30%;
+            background-color: rgb(246, 219, 219);
+            padding-top: 10%;
+        }
+        .logout
+        {
+          margin-left: 80%;
+
+        }
+        .df
+        {
+            width: 100%;
+            height: 20%;
+        
+    
+        }
+        .message
+        {
+            width: 100%;
+            height: 20%;
+            background-color: rgb(97, 90, 90);
+            color: aliceblue;
+            text-align: center;
+            margin-top: 10%;
+        }
+        .pi
+        {
+            font-size: 30px;
+        }
+    </style>
+    <script>
+        function on1()
+        {
+            document.getElementById("ms").style.display="block";
+            document.getElementById("noti").style.display="none";
+        }
+        function on2()
+        {
+            document.getElementById("noti").style.display="block";
+            document.getElementById("ms").style.display="none";
+        }
+    </script>
+
+    <title>ANGANWADI</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'css/open-iconic-bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+    
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/aos.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/ionicons.min.css' %}">
+    
+    <link rel="stylesheet" href="{% static 'css/flaticon.css' %}">
+    <link rel="stylesheet" href="{% static 'css/icomoon.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" >
+  </head>
+  <body >
+    <div class="df"><p><a href="/women_logout/" class="btn btn-secondary px-4 py-3 mt-3 logout">LOGOUT</a></p>
+        
+            
+                
+                
+    </div>
+
+<section class="ftco-section ftco-no-pt ftc-no-pb">
+    <div class="container">
+        <div class="row" >
+            <div class="col-md-5 order-md-last wrap-about py-5 wrap-about bg-light">
+                <div class="text px-4 ftco-animate">
+          <h2 class="mb-4">Anganwadi System In Kerala</h2>
+                    <p>The Non-formal Pre-school Education (PSE) component of the ICDS may well be considered the backbone of the ICDS programme, since all its services essentially converge at the anganwadi – a village courtyard. Anganwadi Centre (AWC) – a village courtyard – is the main platform for delivering of these services. These AWCs have been set up in every village in the country. In pursuance of its commitment to the cause of India’s Children, present government has decided to set up an AWC in every human habitation/ settlement. As a result, total number of AWC would go up to almost 1.4 million. This is also the most joyful play-way daily activity, visibly sustained for three hours a day. It brings and keeps young children at the anganwadi centre - an activity that motivates parents and communities. PSE, as envisaged in the ICDS, focuses on total development of the child, in the age up to six years, mainly from the underprivileged groups. Its programme for the three-to six years old children in the anganwadi is directed towards providing and ensuring a natural, joyful and stimulating environment, with emphasis on necessary inputs for optimal growth and development. The early learning component of the ICDS is a significant input for providing a sound foundation for cumulative lifelong learning and development. It also contributes to the universalization of primary education, by providing to the child the necessary preparation for primary schooling and offering substitute care to younger siblings, thus freeing the older ones – especially girls – to attend school.</p>
+                    <p></p>
+                    <p><a href="#" class="btn btn-secondary px-4 py-3">Read More</a></p>
+                </div>
+            </div>
+            <div class="col-md-7 wrap-about py-5 pr-md-4 ftco-animate" style="background-color: rgb(224, 206, 241);" >
+      <h1 class="mb-4">Children</h1>
+                <p>Children in the age group 0-6 years constitute around 158 million of the population of India (2011 census). These Children are the future human resource of the country. Ministry of Women and Child Development is implementing various schemes for welfare, development and protection of children.</p>
+                <div class="row mt-5">
+                    
+                    
+                    <hr>
+                    <br>
+                
+                    <br>
+                    <h3 >Food Allotment</h3>
+                    <br><hr>
+                    <form action="/view_parent_foodallotment/" method="post" name="fmm">
+                        {% csrf_token %}
+                      <input type="text" name="m" placeholder="month" required>
+                      <input type="text" name="y" placeholder="year" required>\
+                      <br><br> <input type="submit" value="Food Allotment"></form>
+                     
+                    
+                  
+                    <div class="text px-4 ftco-animate">
+                        <br>
+                        <a href="/homepage_parent/"><button>cancel</button></a><br><br>
+                        <h2 class="mb-4">Food Allotment Details</h2>
+                        <hr>
+                        {% for daa in daa %}
+                        <div >
+                          Allotment- {{daa.allot_num}}<br>
+                          Anganwadi- {{daa.angwadi_id}}<br>
+                          Month-Year={{daa.month}}/{{daa.year}}<br>
+                          FOOD<br>
+                          {{daa.food_id_id}}
+                          {{daa.food_id.qty}}
+                          {{daa.food_id_id.discription}}
+              
+                        </div>
+                        <hr>
+                        <br><br>
+                        {% endfor %}
+                                  
+                                 <!--<p><a href="#" class="btn btn-secondary px-4 py-3">Read More</a></p>--> 
+                              </div>
+                              
+                              
+                    
+                </div>
+                
+            </div>
+        </div>
+    
+    </div>
+    
+</section>
+
+
+
+
+<section class="ftco-gallery">
+<div class="container-wrap">
+    <div class="row no-gutters">
+            <div class="col-md-3 ftco-animate">
+                <a href="{% static 'images/image_1.jpg' %}" class="gallery image-popup img d-flex align-items-center" style="background-image:url('/static/images/image_1.jpg');">
+                    <div class="icon mb-4 d-flex align-items-center justify-content-center">
+                    <span class="icon-instagram"></span>
+                </div>
+                </a>
+            </div>
+            <div class="col-md-3 ftco-animate">
+                <a href="{% static 'images/image_2.jpg' %}" class="gallery image-popup img d-flex align-items-center" style="background-image: url('/static/images/image_2.jpg');">
+                    <div class="icon mb-4 d-flex align-items-center justify-content-center">
+                    <span class="icon-instagram"></span>
+                </div>
+                </a>
+            </div>
+            <div class="col-md-3 ftco-animate">
+                <a href="{% static 'images/image_3.jpg' %}" class="gallery image-popup img d-flex align-items-center" style="background-image: url('/static/images/image_3.jpg');">
+                    <div class="icon mb-4 d-flex align-items-center justify-content-center">
+                    <span class="icon-instagram"></span>
+                </div>
+                </a>
+            </div>
+            <div class="col-md-3 ftco-animate">
+                <a href="{% static 'images/image_4.jpg' %}" class="gallery image-popup img d-flex align-items-center" style="background-image: url('/static/images/image_4.jpg');">
+                    <div class="icon mb-4 d-flex align-items-center justify-content-center">
+                    <span class="icon-instagram"></span>
+                </div>
+                </a>
+            </div>
+</div>
+</div>
+</section>
+
+
+<footer class="ftco-footer ftco-bg-dark ftco-section">
+<div class="container">
+<div class="row mb-5">
+  <div class="col-md-6 col-lg-3">
+    <div class="ftco-footer-widget mb-5">
+        <h2 class="ftco-heading-2">Have a Questions?</h2>
+        <div class="block-23 mb-3">
+          <ul>
+            <li><span class="icon icon-map-marker"></span><span class="text">Kerala, India</span></li>
+            <li><a href="#"><span class="icon icon-phone"></span><span class="text">+2 392 3929 210</span></a></li>
+            <li><a href="#"><span class="icon icon-envelope"></span><span class="text">info@yourdomain.com</span></a></li>
+          </ul>
+        </div>
+    </div>
+  </div>
+ 
+  <div class="col-md-6 col-lg-3">
+    <div class="ftco-footer-widget mb-5 ml-md-4">
+      <h2 class="ftco-heading-2">Links</h2>
+      <ul class="list-unstyled">
+        <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>Home</a></li>
+        <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>About</a></li>
+        <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>Services</a></li>
+        <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>Deparments</a></li>
+        <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  
+    <div class="ftco-footer-widget mb-5">
+        <h2 class="ftco-heading-2 mb-0">Connect With Us</h2>
+        <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-3">
+        <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
+        <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
+        <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12 text-center">
+
+    <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved<i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank"></a>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+  </div>
+</div>
+</div>
+</footer>
+
+
+
+<!-- loader -->
+<div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+
+
+<script src="{% static 'js/jquery.min.js' %}"></script>
+<script src="{% static 'js/jquery-migrate-3.0.1.min.js' %}"></script>
+<script src="{% static 'js/popper.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<script src="{% static 'js/jquery.easing.1.3.js' %}"></script>
+<script src="{% static 'js/jquery.waypoints.min.js' %}"></script>
+<script src="{% static 'js/jquery.stellar.min.js' %}"></script>
+<script src="{% static 'js/owl.carousel.min.js' %}"></script>
+<script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+<script src="{% static 'js/aos.js' %}"></script>
+<script src="{% static 'js/jquery.animateNumber.min.js' %}"></script>
+<script src="{% static 'js/scrollax.min.js' %}"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+<script src="{% static 'js/google-map.js' %}"></script>
+<script src="{% static 'js/main.js' %}"></script>
+
+</body>
+</html>

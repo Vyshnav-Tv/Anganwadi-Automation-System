@@ -1,0 +1,278 @@
+{% load static %}
+
+<html lang="en">
+  <head> 
+    <script>
+              function on()
+        {
+            var n=fm.i2.value;
+                if(!isNaN(n))
+                {
+                    alert("enter  character format")
+                    fm.i2.focus();
+                }
+            var p=fm.i7.value;
+                if(p=="")
+                {
+                    alert("plz enter your phone number");
+                    fm.i7.focus();
+                    return false;
+                }
+            if(isNaN(p))
+                {
+                    alert("enter phone num numeical format")
+                    fm.i7.focus();
+                     
+                }
+                if(p.length<=9)
+                {
+                    alert("phn num must b 10 num");
+                    fm.i7.focus();
+                    return false;
+                }
+                var e=fm.i8.value;
+                if(e=="")
+                {
+                    alert("plz enter your email");
+                    fm.i8.focus();
+                    return false;
+                }
+
+                var expression=new RegExp("^[a-z]+(\.[a-z0-9_\+-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*\.([a-z]{2,4})$");
+                if(!expression.test(fm.i8.value))
+                {
+                    alert("wrong email");
+                    fm.i8.focus();
+                    return false;
+                }
+                var a=fm.i3.value;
+                if(a=="select")
+                {
+                    alert("plz select a district");
+                    fm.i3.focus();
+                    return false;
+                }
+
+                
+        }
+    </script>
+    <style>
+        .admin
+        {
+            width: 100%;
+            height: 150%;
+            background-color: black;
+            align-items: center;
+            
+        }
+        .hh{
+            color: aliceblue;
+            text-align: center;
+            
+        
+        }
+        .input
+        {
+            margin-top: 20px;
+            width: 50%;
+            height: 50px;
+            margin-left: 25%;
+
+        }
+        .submit
+        {
+         text-align: center;
+         margin-left: 50%;
+         margin-top: 50px;
+        }
+        .te
+        {
+          color:  rgb(124, 121, 121);
+        }
+        .im{
+            background-repeat: no-repeat;
+            background-size: contain;
+
+        }
+        .admin
+        {
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            background-repeat: no-repeat;
+            background-size: cover;
+            opacity: 50%;
+          
+       
+        }
+        .logout
+        {
+          margin-left: 15%;
+        }
+        .page
+        {
+            text-align: center;
+            padding-top: 20%;
+            font-size: 50px;
+            font-family: fantasy;
+        }
+        .bt
+        {
+            width: 80%;
+            margin-top: 30px;
+            
+        }
+        .d{
+            width: 60px;
+            height: 40px;
+
+        }
+    </style>
+    <title>ANGANWADI-Registration</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'css/open-iconic-bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+    
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/aos.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/ionicons.min.css' %}">
+    
+    <link rel="stylesheet" href="{% static 'css/flaticon.css' %}">
+    <link rel="stylesheet" href="{% static 'css/icomoon.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark ftco_navbar ftco-navbar-light" id="ftco-navbar">
+	    <div class="container d-flex align-items-center">
+	    	<a class="navbar-brand" href="index.html">ANGANWADI</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+	        <span class="oi oi-menu"></span> Menu
+	      </button>
+	      <div class="collapse navbar-collapse" id="ftco-nav">
+	        <ul class="navbar-nav ml-auto">
+	        	<li class="nav-item active"><a href="/admin1/" class="nav-link pl-0">Home</a></li>
+	        	
+			</ul>
+      <div class="dropdown">
+        <ul class="navbar-nav ml-auto">
+        <li class="nav-item" class="nav-link">Anganwadi Management</a></li>
+        <div class="dropdown-content">
+          <a href="/add_anganwadi/">Add Anganwadi</a>
+          <a href="/anganwadi/">Remove&Update Anganwadi</a>
+          <a href="#">Link 3</a>
+        </ul>
+        </div>
+        &nbsp;&nbsp;&nbsp;
+        <br>
+        <div class="dropdown">
+          <ul class="navbar-nav ml-auto">
+          <li class="nav-item" class="nav-link">Food Management</a></li>
+          <div class="dropdown-content">
+            <a href="/add_foodmaster/">Add Food Master</a>
+            <a href="/foodmaster/">Remove Food Master</a>
+            <a href="#">Link 3</a>
+          </ul>
+          </div>
+          &nbsp;&nbsp;&nbsp;
+          <br>
+          <div class="dropdown">
+            <ul class="navbar-nav ml-auto">
+            <li class="nav-item te" class="nav-link">Staf Management</a></li>
+            <div class="dropdown-content">
+              <a href="/add_staf/" class="te">Add Staf</a>
+              <a href="/staf/" class="te">Remove Staf</a>
+              <a href="#">Link 3</a>
+            </ul>
+            </div>
+            &nbsp;&nbsp;&nbsp;
+            <br>
+            <div class="dropdown">
+              <ul class="navbar-nav ml-auto">
+              <li class="nav-item te" class="nav-link">Vccination Details</a></li>
+              <div class="dropdown-content">
+                <a href="/add_vaccination/" class="te">Add Vaccination</a>
+                <a href="/vaccination/" class="te">Remove Vaccination</a>
+                <a href="#">Link 3</a>
+              </ul>
+              </div>
+              &nbsp;&nbsp;&nbsp;
+              <div class="dropdown">
+                <ul class="navbar-nav ml-auto">
+                <li class="nav-item te" class="nav-link">Report</a></li>
+                <div class="dropdown-content">
+                  <a href="/ad_infant/" class="te">Infant</a>
+                  <a href="/ad_student/" class="te">Student</a>
+                  <a href="/ad_anganwadi/">Anganwadi</a>
+                </ul>
+                </div>
+                
+          </ul>
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active"><a href="/view_complaint/" class="nav-link pl-0">View Complaint</a></li>
+            
+      </ul>
+
+        </div>
+        <ul class="navbar-nav ml-auto">
+          <p><a href="/admin_logout/" class="btn btn-secondary px-4 py-3 mt-3 logout">LOGOUT</a></p>
+              
+              
+        </ul>
+
+				  </div>
+                  <!--
+				  <ul class="navbar-nav ml-auto">
+	        	<li class="nav-item"><a href="index.html" class="nav-link">Annual Programmes</a></li>
+	        	<li class="nav-item"><a href="index.html" class="nav-link">Success Stories/Good Practices</a></li>
+	        	<li class="nav-item"><a href="index.html" class="nav-link">Gallery</a></li>
+	          <li class="nav-item"><a href="index.html" class="nav-link">Contact</a></li>
+	        </ul>
+            -->
+	      </div>
+	    </div>
+	  </nav>
+
+<div class="admin">
+    <h2 class="hh">ADD ANGANWADI</h2>
+    <form class="admin" name="fm" action="/in_anganwadi/" method="post">
+      {% csrf_token %}
+        <input type="text" class="input" value="{{angan}}" name="i1"  readonly>
+        <input type="text" class="input" name="i2" placeholder="Anganwadi Name" required>
+        <select class="input" name="i3" required>
+            <option value="select">*select your district*</option>
+            <option value="Malappuram">Malappuram</option>
+            <option value="Kozhikode">Kozhikode</option>
+            <option value="Kasargod">Kasargod</option>
+            <option value="Wayanad">Wayanad</option>
+            <option value="Palakkad">Palakkad</option>
+            <option value="Thrissur">Thrissur</option>
+            <option value="Ernakulam">Ernakulam</option>
+            <option value="Idukki">Idukki</option>
+            <option value="Kottayam">Kottayam</option>
+            <option value="Pathanamthitta">Pathanamthitta</option>
+            <option value="Alappuzha">Alappuzha</option>
+            <option value="Kollam">Kollam</option>
+            <option value="Thiruvananthapuram">Thiruvananthapuram</option>
+            <option value="Kannur">Kannur</option>
+
+        </select>
+        <input type="text" class="input" name="i4" placeholder="Location" required>
+        <input type="text" class="input" name="i5" placeholder="Building Number" required>
+        <input type="text" class="input" name="i6" placeholder="Owner Name" required>
+        <input type="tel" class="input" name="i7" placeholder="phone" required>
+        <input type="email" class="input" name="i8" placeholder="Email" required>
+        <input type="text" class="input" name="i9" value="status" required><br>
+
+        <input type="submit" onmouseover="on();" class="btn btn-secondary py-3 px-4 submit" value="submit">
+    </form>
+
+</div>

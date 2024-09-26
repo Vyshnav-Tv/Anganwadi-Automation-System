@@ -1,0 +1,404 @@
+{% load static %}
+
+<html lang="en">
+  <head> 
+    <script>
+        function on()
+        {
+            
+          
+                var a=fm.i4.value;
+                if(a=="")
+                {
+                    alert("plz type your addresss");
+                    fm.i4.focus();
+                    return false;
+                }
+                
+                var i=new Date(fm.i5.value);
+                fm.i7.value=i;
+                var al=fm.i7.value;
+                if(al=="Invalid Date")
+                {
+                    alert("plz fix date");
+                    fm.i5.focus();
+                    return false;
+                }
+                var p=fm.i8.value;
+                if(p=="")
+                {
+                    alert("plz enter your phone number");
+                    fm.i8.focus();
+                    return false;
+                }
+            if(isNaN(p))
+                {
+                    alert("enter phone num numeical format")
+                    fm.i8.focus();
+                     
+                }
+                if(p.length<=9)
+                {
+                    alert("phn num must b 10 num");
+                    fm.i8.focus();
+                    return false;
+                }
+                var d_date=new Date(fm.i5.value);
+                var y=d_date.getFullYear();
+                var m=d_date.getMonth();
+                var d=d_date.getDate();
+                var today=new Date();
+                var cy=today.getFullYear();
+                var cm=today.getMonth();
+                var cd=today.getDate();
+
+                
+                 
+        }
+    </script>
+
+    <style>
+        .admin
+        {
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            background-repeat: no-repeat;
+            background-size: cover;
+            opacity: 50%;
+          
+       
+        }
+        .logout
+        {
+          margin-left: 15%;
+        }
+        .page
+        {
+            text-align: center;
+            padding-top: 20%;
+            font-size: 50px;
+            font-family: fantasy;
+        }
+        .bt
+        {
+            width: 80%;
+            margin-top: 30px;
+            
+        }
+        .d{
+            width: 60px;
+            height: 40px;
+
+        }
+        .im{
+            background-repeat: no-repeat;
+            background-size: contain;
+
+        }
+        .input
+        {
+            margin-top: 20px;
+            width: 50%;
+            height: 50px;
+            margin-left: 25%;
+
+        }
+        .submit
+        {
+         text-align: center;
+         margin-left: 50%;
+         margin-top: 50px;
+        }
+        .tab
+        {
+            width: 100%;
+            height: 10%;
+            border-collapse: collapse;
+            border-spacing: 0;
+            border: 1px solid #ddd;
+            background-color: #111111;
+        }
+        .thh
+        {
+            color: aliceblue;
+            font-size: 20px;
+            text-align: center;
+        }
+        td{
+            text-align: center;
+            color: aliceblue;
+        }
+        .te
+        {
+            color: rgb(124, 121, 121);
+        }
+        .rd
+        {
+          margin-left: 60%;
+          font-size: 50%;
+          margin-top: 10px;
+        }
+    </style>
+    <title>ANGANWADI-Registration</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'css/open-iconic-bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+    
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/aos.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/ionicons.min.css' %}">
+    
+    <link rel="stylesheet" href="{% static 'css/flaticon.css' %}">
+    <link rel="stylesheet" href="{% static 'css/icomoon.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  </head><body style="background-color: rgb(211, 246, 243);">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark ftco_navbar ftco-navbar-light" id="ftco-navbar">
+	    <div class="container d-flex align-items-center">
+	    	<a class="navbar-brand" href="/homepage_anganwadi/">ANGANWADI</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+	        <span class="oi oi-menu"></span> Menu
+	      </button>
+	      <div class="collapse navbar-collapse" id="ftco-nav">
+	        <ul class="navbar-nav ml-auto">
+	        	<li class="nav-item active"><a href="/homepage_anganwadi/" class="nav-link pl-0">Home</a></li>
+	        	
+			</ul>
+				<div class="dropdown">
+					<ul class="navbar-nav ml-auto">
+					<li class="nav-item" class="nav-link">Student Management</a></li>
+					<div class="dropdown-content">
+					  <a href="/add_student/">Add Student</a>
+					  <a href="/student/">Remove&Update Student</a>
+					 
+					</ul>
+					</div>
+          &nbsp;&nbsp;
+          <br>
+          <div class="dropdown">
+            <ul class="navbar-nav ml-auto">
+            <li class="nav-item" class="nav-link">Infant Management</a></li>
+            <div class="dropdown-content">
+              <a href="/add_infant/">Add Infant</a>
+              <a href="/infant/">Remove Infant</a>
+             
+            </ul>
+            </div>
+            &nbsp;&nbsp;
+            <br>
+            <div class="dropdown">
+              <ul class="navbar-nav ml-auto">
+              <li class="nav-item te" class="nav-link">Womens Management</a></li>
+              <div class="dropdown-content">
+                <a href="/add_women/" class="te">Add Womens</a>
+                <a href="/women/" class="te">Remove</a>
+               
+              </ul>
+              </div>
+              &nbsp;&nbsp;
+              <br>
+              <div class="dropdown">
+                <ul class="navbar-nav ml-auto">
+                <li class="nav-item te" class="nav-link">Article Management</li>
+                <div class="dropdown-content">
+                  <a href="/add_article/" class="te">Add Article</a>
+                  <a href="/article/" class="te">Remove Article</a>
+                  
+                </ul>
+                </div>
+                
+              &nbsp;&nbsp;
+              <br>
+              <div class="dropdown">
+                <ul class="navbar-nav ml-auto">
+                <li class="nav-item te" class="nav-link">Notification Management</li>
+                <div class="dropdown-content">
+                  <a href="/add_notification/" class="te">Add Notification</a>
+                  <a href="/notification/" class="te">Remove Notification</a>
+                 
+                </ul>
+                </div>
+                <!--
+                &nbsp;&nbsp;
+                <br>
+                <div class="dropdown">
+                  <ul class="navbar-nav ml-auto">
+                  <li class="nav-item te" class="nav-link">Message Management</li>
+                  <div class="dropdown-content">
+                    <a href="/add_message/" class="te">Add Message</a>
+                    <a href="/message/" class="te">Remove Message</a>
+                    <a href="#">Link 3</a>
+                  </ul>
+                  </div>-->
+                  &nbsp;&nbsp;
+                <br>
+                <div class="dropdown">
+                  <ul class="navbar-nav ml-auto">
+                  <li class="nav-item te" class="nav-link">Food Allotment</li>
+                  <div class="dropdown-content">
+                    <a href="/add_foodallotment/" class="te">Add Food_Allotment</a>
+                    <a href="/foodallotment/" class="te">Remove Food_Allotment</a>
+                    
+                  </ul>
+                  </div>
+                  <div class="dropdown">
+                    <ul class="navbar-nav ml-auto">
+                      <a href="/angn_view_complaint/" class="te"><li class="nav-item te" class="nav-link">Complaints</li></a>
+                    
+                      
+                    </ul>
+                    </div>
+                
+
+				  </div>
+          <ul class="navbar-nav ml-auto">
+            <p><a href="/anganwadi_logout/" class="btn btn-secondary px-4 py-3 mt-3 logout">LOGOUT</a></p>
+	        	
+			</ul><!--
+				  <ul class="navbar-nav ml-auto">
+	        	<li class="nav-item"><a href="index.html" class="nav-link">Annual Programmes</a></li>
+	        	<li class="nav-item"><a href="index.html" class="nav-link">Success Stories/Good Practices</a></li>
+	        	<li class="nav-item"><a href="index.html" class="nav-link">Gallery</a></li>
+	          <li class="nav-item"><a href="index.html" class="nav-link">Contact</a></li>
+	        </ul>
+          -->
+	      </div>
+	 </div>
+	  
+    </nav>
+
+    <!-- END nav -->
+   
+    
+
+    <section class="ftco-section ftco-consult ftco-no-pt ftco-no-pb im" style="background-image: url(/static/images/prg1.jpg);" data-stellar-background-ratio="0.5">
+    	<div class="container">
+    		<div class="row justify-content-end">
+    			<div class="col-md-6 py-5 px-md-5 bg-primary">
+	          <div class="heading-section heading-section-white ftco-animate mb-5">
+	            <h2 class="mb-4">ADD PREGNANT WOMEN</h2>
+
+	          </div>
+	          
+	    				<div class="d-md-flex">
+		    				
+	    				</div>
+	    				
+		            <div class="form-group ml-md-4">
+                        
+                        <form  name="fm" action="/in_women/" method="post" enctype="multipart/form-data">
+                          {% csrf_token %}
+                          <input type="text" class="input" value="{{w}}" name="i1"  readonly>
+                            
+                            
+                          <input type="hidden" name="i2" value={{request.session.anganwadi}}>
+                            <input type="text" class="input" name="i3" placeholder="Name" required><br>
+                            
+                            <textarea class="input" name="i4" placeholder="address" ></textarea><br>
+                           <input type="number" class="input" name="i5" id="db" min="1" max="10" placeholder="Current Month:" required>
+                            <input type="hidden" value="n" name="i7">
+                            <input type="tel" class="input" name="i8" placeholder="Phone Number">
+                            <input type="hidden" class="input" name="i6" value="verified" style="text-align: center;" required readonly><br>
+
+         
+
+                            <input type="submit" value="Submit"  onmouseover="on();" class="bt btn btn-secondary py-3 px-4">
+                          
+                        </form>
+                        
+                
+		              
+		            </div>
+	    				</div>
+	    			</form>
+    			</div>
+        </div>
+    	</div>
+    </section>
+
+					
+
+		
+    <footer class="ftco-footer ftco-bg-dark ftco-section">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-md-6 col-lg-3">
+            <div class="ftco-footer-widget mb-5">
+            	<h2 class="ftco-heading-2">Have a Questions?</h2>
+            	<div class="block-23 mb-3">
+	              <ul>
+	                <li><span class="icon icon-map-marker"></span><span class="text">Kerala, India</span></li>
+	                <li><a href="#"><span class="icon icon-phone"></span><span class="text">+2 392 3929 210</span></a></li>
+	                <li><a href="#"><span class="icon icon-envelope"></span><span class="text">info@yourdomain.com</span></a></li>
+	              </ul>
+	            </div>
+            </div>
+          </div>
+          
+          <div class="col-md-6 col-lg-3">
+            <div class="ftco-footer-widget mb-5 ml-md-4">
+              <h2 class="ftco-heading-2">Links</h2>
+              <ul class="list-unstyled">
+                <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>Home</a></li>
+                <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>About</a></li>
+                <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>Services</a></li>
+                <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>Deparments</a></li>
+                <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>Contact</a></li>
+              </ul>
+            </div>
+          </div>
+          
+            <div class="ftco-footer-widget mb-5">
+            	<h2 class="ftco-heading-2 mb-0">Connect With Us</h2>
+            	<ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-3">
+                <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
+                <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
+                <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 text-center">
+
+            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved<i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank"></a>
+  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    
+  
+
+  <!-- loader -->
+  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+
+
+  <script src="{% static 'js/jquery.min.js' %}"></script>
+  <script src="{% static 'js/jquery-migrate-3.0.1.min.js' %}"></script>
+  <script src="{% static 'js/popper.min.js' %}"></script>
+  <script src="{% static 'js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'js/jquery.easing.1.3.js' %}"></script>
+  <script src="{% static 'js/jquery.waypoints.min.js' %}"></script>
+  <script src="{% static 'js/jquery.stellar.min.js' %}"></script>
+  <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+  <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+  <script src="{% static 'js/aos.js' %}"></script>
+  <script src="{% static 'js/jquery.animateNumber.min.js' %}"></script>
+  <script src="{% static 'js/scrollax.min.js' %}"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+  <script src="{% static 'js/google-map.js' %}"></script>
+  <script src="{% static 'js/main.js' %}"></script>
+    
+  </body>
+</html>
